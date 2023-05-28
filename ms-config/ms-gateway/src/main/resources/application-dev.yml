@@ -13,7 +13,8 @@ spring:
         group: project_business
     gateway:
       routes:
-        - id: host_route
+        - id: ms-zzp-consumer
+          uri: http://localhost:8001
           predicates:
             - Path=/**
-          uri: https://www.bing.com/
+#https://www.cnblogs.com/hanzeng1993/p/15420383.html
