@@ -1,0 +1,14 @@
+current:
+  namespace: project_sit
+
+server:
+  port: 8102
+
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: http://localhost:8845,http://localhost:8847,http://localhost:8849
+        namespace: namespace_sit
+        group: project_business
+

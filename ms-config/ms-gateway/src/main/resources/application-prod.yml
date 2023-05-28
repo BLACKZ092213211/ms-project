@@ -1,0 +1,19 @@
+current:
+  namespace: project_prod
+
+server:
+  port: 9003
+
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: http://localhost:8845,http://localhost:8847,http://localhost:8849
+        namespace: namespace_prod
+        group: project_business
+    gateway:
+      routes:
+        - id: host_route
+          predicates:
+            - Path=/consumer/**
+          uri: https://www.baidu.com/

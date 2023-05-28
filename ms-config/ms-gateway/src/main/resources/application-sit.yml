@@ -1,0 +1,19 @@
+current:
+  namespace: project_sit
+
+server:
+  port: 9002
+
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: http://localhost:8845,http://localhost:8847,http://localhost:8849
+        namespace: namespace_sit
+        group: project_business
+    gateway:
+      routes:
+        - id: host_route
+          predicates:
+            - Path=/consumer/**
+          uri: https://www.google.com/

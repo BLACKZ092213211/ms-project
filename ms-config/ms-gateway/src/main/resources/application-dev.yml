@@ -1,0 +1,19 @@
+current:
+  namespace: project_dev
+
+server:
+  port: 9001
+
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: http://localhost:8845,http://localhost:8847,http://localhost:8849
+        namespace: namespace_dev
+        group: project_business
+    gateway:
+      routes:
+        - id: host_route
+          predicates:
+            - Path=/**
+          uri: https://www.bing.com/

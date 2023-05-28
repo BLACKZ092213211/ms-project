@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: ms-zzp-gateway
+  cloud:
+    nacos:
+      config:
+        server-addr: http://localhost:8845,http://localhost:8847,http://localhost:8849
+        namespace: project_dev
+        group: project_business
+        file-extension: yml
+#        refresh-enabled: true 默认值为true
+  profiles:
+    active: dev
